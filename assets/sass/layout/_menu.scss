@@ -110,9 +110,9 @@
 	}
 
 	body.is-menu-visible {
-		#page-wrapper {
-			@include vendor('filter', 'blur(1.5px)');
-		}
+		//#page-wrapper {
+		//	@include vendor('filter', 'blur(1.5px)');
+		//}
 
 		#menu {
 			@include vendor('pointer-events', 'auto');
