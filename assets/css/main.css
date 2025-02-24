@@ -3262,7 +3262,7 @@ input, select, textarea {
 		cursor: default;
 		height: 100%;
 		left: 0;
-		opacity: 0;
+		opacity: 1;
 		position: fixed;
 		text-align: center;
 		top: 0;
@@ -3285,7 +3285,7 @@ input, select, textarea {
 			border-radius: 5px;
 			display: block;
 			max-width: 100%;
-			opacity: 0;
+			opacity: 1;
 			position: relative;
 			width: 18em;
 		}
