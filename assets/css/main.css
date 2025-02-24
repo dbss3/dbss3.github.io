@@ -3355,10 +3355,10 @@ input, select, textarea {
 		}
 
 	body.is-menu-visible #page-wrapper {
-		-moz-filter: blur(0);
-		-webkit-filter: blur(0);
-		-ms-filter: blur(0);
-		filter: blur(0);
+		-moz-filter: none;
+		-webkit-filter: none;
+		-ms-filter: none;
+		filter: none;
 	}
 
 	body.is-menu-visible #menu {
