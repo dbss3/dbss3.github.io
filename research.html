@@ -46,8 +46,7 @@
 					<section id="wrapper">
 						<header>
 							<div class="inner">
-								<h2>Generic</h2>
-								<p>Phasellus non pulvinar erat. Fusce tincidunt nisl eget ipsum.</p>
+								<h2>Research Highlights</h2>
 							</div>
 						</header>
 
@@ -55,29 +54,75 @@
 							<div class="wrapper">
 								<div class="inner">
 
-									<h3 class="major">Lorem ipsum dolor</h3>
-									<p>Morbi mattis mi consectetur tortor elementum, varius pellentesque velit convallis. Aenean tincidunt lectus auctor mauris maximus, ac scelerisque ipsum tempor. Duis vulputate ex et ex tincidunt, quis lacinia velit aliquet. Duis non efficitur nisi, id malesuada justo. Maecenas sagittis felis ac sagittis semper. Curabitur purus leo donec vel dolor at arcu tincidunt bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce ut aliquet justo. Donec id neque ipsum. Integer eget ultricies odio. Nam vel ex a orci fringilla tincidunt. Aliquam eleifend ligula non velit accumsan cursus. Etiam ut gravida sapien.</p>
+									<h3 class="major">Observable effects of cloud particle porosity and irregular shapes</h3>
 
-									<p>Vestibulum ultrices risus velit, sit amet blandit massa auctor sit amet. Sed eu lectus sem. Phasellus in odio at ipsum porttitor mollis id vel diam. Praesent sit amet posuere risus, eu faucibus lectus. Vivamus ex ligula, tempus pulvinar ipsum in, auctor porta quam. Proin nec commodo, vel scelerisque nisi scelerisque. Suspendisse id quam vel tortor tincidunt suscipit. Nullam auctor orci eu dolor consectetur, interdum ullamcorper ante tincidunt. Mauris felis nec felis elementum varius.</p>
+									<p >Since the first observations of exoplanet atmospheres clouds have had a major impact on the observed 
+										spectra. It is therefore essential to understand the processes that affect their formation,
+										as well as the details of the cloud particles themselves and the impact it can have on atmospheric opacity. 
+										The wide range of planetary parameters seen in exoplanets offers a unique laboratory to explore chemistry and 
+										stellar environments that are not observable in our solar system. Furthermore, we now know that most exoplanets
+										do not look like solar system planets, instead they are a size intermediate between the Earth and Neptune. 
+										These so called 'Mini-Neptunes' and 'Super-Earths', are what I ultimately aim to study.</p>
 
-									<h3 class="major">Vitae phasellus</h3>
-									<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
 
-									<section class="features">
-										<article>
-											<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
-											<h3 class="major">Sed feugiat lorem</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
-											<h3 class="major">Nisl placerat</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-									</section>
 
+									<p>Cloud particles are often modelled as compact spheres. This is expected to not be the case, instead being non-compact and irregularly shaped.</p>
+									<div class="box alt">
+										<div class="row gtr-uniform">
+											<div class="col-6"><span class="image fit"><img src="images/piechart_smol.png" alt="" /></span><figcaption><em>Illustration of a compact, spherical, mixed material cloud particle. Materials shown are crystals of materials found in our models, but we do not expect them to look like this.</em></figcaption></div>
+											<div class="col-6"><span class="image fit"><img src="images/realgrain_smol.png" alt="" /></span><figcaption><em>Illustration of a - perhaps - more realistic cloud particle. At the interface between materials micro-porosity is expected to occur, and the non-spherical shape is modelled by a distribution of hollow spheres.</em></figcaption></div>
+									</div>
+									<p><br></p>
+									<p>To explore the inclusion of empty space into the cloud particle, which we term 'micro-porosity' we introduce a parameter 
+									   (<em>f</em><sub>por</sub>) to modify the effective density of the cloud particles, constant across the atmosphere. 
+									   Optical affects are modelled by including the volume as vacuum, using Mie and effective medium theory.</p>
+
+									<p><span class="image left"><img src="images/fosterite_poros_labeled_wbackground.png?w=1024" alt=""/>
+										<figcaption><em>Refractive indices for Mg<sub>2</sub>SiO<sub>4</sub> with increasing micro-porosity fractions included using effective medium theory.</em></figcaption></span><br>
+										To include details on irregularly shaped particles we use a statistical distribution of hollow spheres (DHS), a hollow sphere is made up of a vacuum core and a material mantle. Each hollow sphere in the distribution is defined by the ratio of the volume of the material mantle <em>f</em><sub>hol</sub>. This distribution is then averaged over using Mie theory for optical properties.</p>
+
+									<img src="images/holo_increase_fhol_landscape-e1595800890872.png" alt=""/>
+									<figcaption><em>Illustrative figure of hollow spheres with increasing f</em><sub>hol</sub><em>. The volume of the mantle is conserved for all hollow spheres in the distribution.</em></figcaption><br>
+
+									<p><span class="image right"><img src="images/opticaldepth_jwst_wimage2-1.png?w=1008" alt=""/>
+										<figcaption><em>Pressure at which micro-porous and non-spherical clouds become optically thick for a Drift-Phoenix with T</em><sub>eff</sub> = 1800 K, log(g [cms<sup>-2</sup>]) = 3.0<em> atmosphere. 
+									   If the cloud never becomes optically thick the bottom of the atmosphere is returned ( ~2 bar). JWST instrument wavelengths are shown by the coloured bars, artist impression of the deployed JWST credit: NASA.</em></figcaption></span><br>
+									   Looking at the vertically integrated optical depth for a 'warm gas giant' Drift-Phoenix profile, we see that micro-porosity affects the silicate features at ~10 μm. As well as this, 
+									   micro-porosity makes clouds optically thick for wavelengths up to 100 μm, compared to 20 μm for the compact case. Irregularly shape effects (through a DHS)
+									   also increases the optically thick wavelength for both cases. Such affects are in the wavelength regime of MIRI and thus may be observable with JWST.</p>
+
+									<p>Further details on the albedo of such cloud particles, as well as micro-porous one dimensional cloud structures for a range of planetary parameters, 
+										and a Gaussian cloud particle size distribution are explored in the <a href="https://doi.org/10.1051/0004-6361/202037553">Paper</a>.</p>
+										
+										
+									<h3 class="major">Global Cloud Effects on the Ultra-hot Jupiter HATP-7 b</h3>
+									
+									<p>As part of a collaboration among attendees at <a href="http://eos-nexus.org/clouds/" target="_blank" rel="noreferrer noopener">Cloud Academy I</a>,
+									   we modelled the global distribution of clouds on the Ultra-hot Jupiter
+									   <a href="http://exoplanet.eu/catalog/hat-p-7_b/" target="_blank" rel="noreferrer noopener">HAT-P-7b</a>. 
+									   We used 97 one dimensional (p, T, Vz)-profiles extracted from a three dimensional, cloud-free, global circulation model.</p>
+
+									<p>These profiles were used as input into a kinetic cloud formation model. We find cloud formation on the night-side,
+										but a near absence of cloud formation on the day-side, which can be up to 2500 K hotter.</p>
+
+									<div class="box alt">
+										<div class="row gtr-uniform">
+											<div class="col-6"><span class="image fit"><img src="images/temp_equator_cropped.png?w=533" alt="" /></span><figcaption><em>Local gas temperature around the equator of HAT-P-7b, the star is located to the right and the terminator is indicated by the green dashed line.</em></figcaption></div>
+											<div class="col-6"><span class="image fit"><img src="images/thourhod_rho_equator_cropped.png?w=534" alt="" /></span><figcaption><em>Same as left plot, but showing the ratio of cloud particle mass density to atmospheric mass density. </em></figcaption></div>
+									</div>
+									<p><br></p>
+
+									<p>Equatorial super-rotation causes the evening terminator (ɸ = 90.0°) to be warmer than the morning terminator (ɸ = 270.0°), 
+										this produces different chemistry on the two terminators. It also causes an asymmetry in clouds, which affects the 
+										optically observable depth of the atmosphere.</p>
+
+									<p><span class="image right"><img src="images/gas_opacity_wavel-e1595799151389.png" alt=""/>
+										<figcaption><em>Optical depth of gas species and clouds, for four key points around the equator of HAT-P-7b</em></figcaption></span><br>
+										Thus one dimensional transmission spectra retrievals of atmospheric parameters will be biased by ignoring this effect.
+										Further results involving global maps of cloud composition and effect on C/O ratio are explored in 
+										<a rel="noreferrer noopener" href="https://doi.org/10.1051/0004-6361/201935771" target="_blank">Paper I</a>. 
+										Disequilibrium processes are explore in <a rel="noreferrer noopener" href="https://doi.org/10.1051/0004-6361/201937044" target="_blank">Paper II</a>.
+										Effects of thermal ionisation are explored in <a href="https://doi.org/10.1051/0004-6361/202039699" target="_blank" rel="noreferrer noopener">Paper III</a>.</p>
 								</div>
 							</div>
 
