@@ -1,0 +1,46 @@
+# Web projects, each hosted from its own GitHub repo with GitHub Pages.
+# Adding an entry here puts it in the Projects tab dropdown, the menu,
+# the Projects page and the home page automatically.
+- name: ExoWorldle
+  url: /ExoWorldle/
+  repo: https://github.com/dbss3/ExoWorldle
+  image: /images/projects/exoworldle.jpg
+  tagline: Daily mystery-exoplanet guessing game
+  description: >-
+    A daily guessing game: name the mystery planet, drawn from the thousands
+    of known exoplanets, using clues such as its orbit and equilibrium
+    temperature compared with planets in our Solar System.
+  tags: [Game, Exoplanets]
+
+- name: DeepSkyGuessr
+  url: /DeepSkyGuessr/
+  repo: https://github.com/dbss3/DeepSkyGuessr
+  image: /images/projects/deepskyguessr.jpg
+  tagline: GeoGuessr for the night sky
+  description: >-
+    A GeoGuessr-inspired game for the night sky, featuring galaxies, nebulae,
+    globular and open clusters, and supernova remnants, explored with the
+    Aladin Lite sky viewer. Images and object info from DeepSkyCorner.
+  tags: [Game, Deep sky]
+
+- name: Drake Equation Simulator
+  url: /DrakeEqSim/
+  repo: https://github.com/dbss3/DrakeEqSim
+  image: /images/projects/drakeeqsim.jpg
+  tagline: How likely are we to hear from aliens?
+  description: >-
+    A simulation "game" inspired by the Drake equation. Choose the terms and
+    watch life, intelligence and technological civilisations emerge (and go
+    extinct) across a model galaxy, and whether their signals ever reach us.
+  tags: [Simulation, SETI]
+
+- name: CricWormViz
+  url: /CricWormViz/
+  repo: https://github.com/dbss3/CricWormViz
+  image: /images/projects/cricwormviz.jpg
+  tagline: Ball-by-ball cricket worm charts
+  description: >-
+    A visualiser for cricket matches, using cumulative "worm" charts to show
+    runs accumulated, batting partnerships and bowling efficiency. Has a live
+    interface to ESPNcricinfo.
+  tags: [Data viz, Cricket]

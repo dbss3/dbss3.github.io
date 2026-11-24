@@ -1,0 +1,16 @@
+# Site settings (used by Jekyll, which GitHub Pages runs automatically)
+title: Dominic Samra
+description: >-
+  Dominic Samra, postdoctoral scholar at the University of Chicago, modelling
+  clouds and cloud particles in the atmospheres of exoplanets and brown dwarfs.
+url: https://www.dominicsamra.uk
+baseurl: ""
+
+# Don't publish these
+exclude:
+  - README.md
+  - README.txt
+  - LICENSE.txt
+  - assets/sass
+  - Gemfile
+  - Gemfile.lock

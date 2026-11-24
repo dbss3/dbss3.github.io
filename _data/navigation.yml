@@ -1,0 +1,16 @@
+# Header tabs and menu entries.
+# `title` is shown in the header tabs, `full` (optional) in the pop-out menu.
+- title: Research
+  url: /research.html
+- title: Publications
+  url: /publications.html
+- title: Talks
+  full: Posters, Talks & Conferences
+  url: /presentations.html
+- title: Roles
+  full: Roles & Responsibilities
+  url: /roles.html
+- title: Outreach
+  url: /outreach.html
+- title: Astrophotography
+  url: /astrophotography.html

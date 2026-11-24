@@ -1,0 +1,494 @@
+/*
+	Site-specific additions on top of the Solid State theme (main.css).
+	Kept separate so main.css can stay as the stock theme.
+*/
+
+/* ---------------------------------------------------------------
+   Header: name on the left, tabs on the right
+   --------------------------------------------------------------- */
+
+	#header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+		#header h1 {
+			font-size: 0.9em;
+			white-space: nowrap;
+		}
+
+		/* The theme absolutely-positions every header nav; we lay them out with flex instead */
+		#header nav {
+			position: static;
+			top: auto;
+			right: auto;
+		}
+
+		#header nav.tabs {
+			display: none;
+			height: 3.5em;
+			line-height: 3.5em;
+			margin-left: auto;
+		}
+
+			#header nav.tabs > ul {
+				display: flex;
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+
+			#header nav.tabs li {
+				padding: 0;
+				position: relative;
+			}
+
+			#header nav.tabs > ul > li > a {
+				border-bottom: 2px solid transparent;
+				display: block;
+				height: 3.5em;
+				line-height: 3.5em;
+				padding: 0 0.95em;
+				transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+				color: rgba(255, 255, 255, 0.75);
+			}
+
+				#header nav.tabs > ul > li > a:hover,
+				#header nav.tabs > ul > li:focus-within > a {
+					color: #ffffff;
+					border-bottom-color: rgba(255, 255, 255, 0.35);
+				}
+
+				#header nav.tabs > ul > li > a.active {
+					color: #ffffff;
+					border-bottom-color: #ffffff;
+				}
+
+			/* Projects dropdown */
+			#header nav.tabs .dropdown-toggle:after {
+				content: '\f107';
+				font-family: 'Font Awesome 5 Free';
+				font-weight: 900;
+				margin-left: 0.5em;
+			}
+
+			#header nav.tabs .dropdown-menu {
+				background: rgba(46, 49, 65, 0.98);
+				border-radius: 0 0 5px 5px;
+				box-shadow: 0 0.75em 2em rgba(0, 0, 0, 0.35);
+				line-height: 1.4;
+				list-style: none;
+				margin: 0;
+				min-width: 19em;
+				opacity: 0;
+				padding: 0.5em 0;
+				position: absolute;
+				right: 0;
+				text-transform: none;
+				top: 100%;
+				transform: translateY(-0.5em);
+				transition: opacity 0.15s ease-in-out, transform 0.15s ease-in-out, visibility 0.15s;
+				visibility: hidden;
+			}
+
+				#header nav.tabs .dropdown:hover .dropdown-menu,
+				#header nav.tabs .dropdown:focus-within .dropdown-menu {
+					opacity: 1;
+					transform: none;
+					visibility: visible;
+				}
+
+				#header nav.tabs .dropdown-menu a {
+					border: 0;
+					display: block;
+					letter-spacing: 0;
+					padding: 0.65em 1.4em;
+				}
+
+					#header nav.tabs .dropdown-menu a:hover,
+					#header nav.tabs .dropdown-menu a:focus {
+						background: rgba(255, 255, 255, 0.06);
+					}
+
+				#header nav.tabs .dropdown-menu strong {
+					display: block;
+					font-size: 1.05em;
+					letter-spacing: 0.05em;
+				}
+
+				#header nav.tabs .dropdown-menu span {
+					color: rgba(255, 255, 255, 0.55);
+					display: block;
+					font-family: "Source Sans Pro", Helvetica, sans-serif;
+					font-size: 1.15em;
+					font-weight: 300;
+				}
+
+				#header nav.tabs .dropdown-menu li.all {
+					border-top: solid 1px rgba(255, 255, 255, 0.1);
+					margin-top: 0.4em;
+					padding-top: 0.4em;
+				}
+
+					#header nav.tabs .dropdown-menu li.all a {
+						font-weight: 700;
+						letter-spacing: 0.1em;
+						text-transform: uppercase;
+					}
+
+		/* Wide screens: show the tabs, hide the pop-out menu button */
+		@media screen and (min-width: 1181px) {
+
+			#header nav.tabs {
+				display: block;
+			}
+
+			#header nav.menu-toggle {
+				display: none;
+			}
+
+			/* On the home page the name is hidden over the banner; keep tabs right-aligned */
+			#header.alt h1 {
+				visibility: hidden;
+			}
+
+		}
+
+		@media screen and (max-width: 1180px) {
+
+			#header nav.menu-toggle {
+				margin-left: auto;
+			}
+
+		}
+
+		/* Theme hides the "Menu" label off to the side at this size; clip it */
+		@media screen and (max-width: 480px) {
+
+			#header nav.menu-toggle a[href="#menu"] {
+				overflow: hidden;
+			}
+
+		}
+
+/* ---------------------------------------------------------------
+   Pop-out menu: indented list of projects under "Projects"
+   --------------------------------------------------------------- */
+
+	#menu .links.sub {
+		margin-top: -0.5em;
+	}
+
+		#menu .links.sub li a {
+			color: rgba(255, 255, 255, 0.6);
+			font-size: 0.7em;
+			height: 2.6em;
+			line-height: 2.6em;
+			padding-left: 1em;
+		}
+
+			#menu .links.sub li a:before {
+				content: '\2013\00a0';
+			}
+
+/* ---------------------------------------------------------------
+   Project cards (home page + Projects page)
+   --------------------------------------------------------------- */
+
+	.features.projects article {
+		display: flex;
+		flex-direction: column;
+	}
+
+		.features.projects article .image {
+			aspect-ratio: 16 / 10;
+			border-bottom: 0;
+			overflow: hidden;
+		}
+
+			.features.projects article .image img {
+				display: block;
+				height: 100%;
+				object-fit: cover;
+				object-position: top;
+				transition: transform 0.4s ease;
+			}
+
+			.features.projects article .image:hover img {
+				transform: scale(1.04);
+			}
+
+		.features.projects article h3.major {
+			margin-bottom: 1em;
+		}
+
+		.features.projects article .actions,
+		.features.projects article > a.special:last-child {
+			margin-top: auto;
+		}
+
+		.features.projects article > a.special:last-child {
+			margin-bottom: 1.75em;
+		}
+
+		.features.projects article .actions {
+			margin-bottom: 1.75em;
+		}
+
+	ul.tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5em;
+		list-style: none;
+		margin: -0.25em 0 1em 0;
+		padding: 0;
+	}
+
+		ul.tags li {
+			background: rgba(255, 255, 255, 0.08);
+			border-radius: 1em;
+			font-family: Raleway, Helvetica, sans-serif;
+			font-size: 0.65em;
+			font-weight: 700;
+			letter-spacing: 0.1em;
+			line-height: 1;
+			padding: 0.6em 1em;
+			text-transform: uppercase;
+		}
+
+/* ---------------------------------------------------------------
+   Publications
+   --------------------------------------------------------------- */
+
+	ul.pub-list {
+		list-style: none;
+		padding-left: 0;
+	}
+
+		ul.pub-list li {
+			border-left: solid 2px rgba(255, 255, 255, 0.125);
+			color: rgba(255, 255, 255, 0.7);
+			margin-bottom: 1.25em;
+			padding-left: 1.25em;
+		}
+
+			ul.pub-list li a {
+				font-weight: 600;
+			}
+
+			ul.pub-list li strong {
+				color: #ffffff;
+			}
+
+/* ---------------------------------------------------------------
+   Astrophotography grid
+   --------------------------------------------------------------- */
+
+	.AstroImages {
+		display: grid;
+		gap: 0.5em;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: auto auto;
+		grid-template-areas:
+			"one two three"
+			"one four four";
+	}
+
+		.AstroImages .childImage {
+			border-radius: 5px;
+			margin: 0;
+			overflow: hidden;
+			position: relative;
+		}
+
+			.AstroImages .childImage:nth-child(1) { grid-area: one; }
+			.AstroImages .childImage:nth-child(2) { grid-area: two; }
+			.AstroImages .childImage:nth-child(3) { grid-area: three; }
+			.AstroImages .childImage:nth-child(4) { grid-area: four; }
+
+			.AstroImages .childImage img {
+				display: block;
+				height: 100%;
+				object-fit: cover;
+				transition: transform 0.4s ease;
+				width: 100%;
+			}
+
+			.AstroImages .childImage:hover img {
+				transform: scale(1.03);
+			}
+
+			.AstroImages figcaption {
+				background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+				bottom: 0;
+				font-size: 0.9em;
+				left: 0;
+				padding: 1.5em 1em 0.6em 1em;
+				pointer-events: none;
+				position: absolute;
+				right: 0;
+			}
+
+		@media screen and (max-width: 736px) {
+
+			.AstroImages {
+				grid-template-columns: 1fr;
+				grid-template-areas: none;
+			}
+
+				.AstroImages .childImage:nth-child(n) {
+					grid-area: auto;
+				}
+
+				.AstroImages .childImage img {
+					aspect-ratio: 3 / 2;
+				}
+
+		}
+
+	p.hint {
+		color: rgba(255, 255, 255, 0.5);
+		font-size: 0.9em;
+		margin-top: 1em;
+	}
+
+/* ---------------------------------------------------------------
+   Figures: captions, and click-to-enlarge (see assets/js/lightbox.js)
+   --------------------------------------------------------------- */
+
+	figcaption {
+		color: rgba(255, 255, 255, 0.65);
+		font-size: 0.9em;
+		line-height: 1.5;
+		margin: 0.5em 0 1em 0;
+	}
+
+	img.zoomable {
+		cursor: zoom-in;
+	}
+
+	.lightbox {
+		align-items: center;
+		background: rgba(20, 22, 30, 0.94);
+		bottom: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		left: 0;
+		opacity: 0;
+		padding: 3em 4.5em;
+		position: fixed;
+		right: 0;
+		top: 0;
+		transition: opacity 0.2s ease-in-out, visibility 0.2s;
+		visibility: hidden;
+		z-index: 20000;
+	}
+
+		.lightbox.visible {
+			opacity: 1;
+			visibility: visible;
+		}
+
+		.lightbox img {
+			border-radius: 4px;
+			box-shadow: 0 1em 3em rgba(0, 0, 0, 0.5);
+			cursor: zoom-out;
+			max-height: calc(100vh - 10em);
+			max-width: 100%;
+			object-fit: contain;
+		}
+
+		.lightbox .caption {
+			color: rgba(255, 255, 255, 0.8);
+			margin-top: 1em;
+			max-width: 60em;
+			text-align: center;
+		}
+
+		.lightbox button {
+			background: transparent;
+			border: 0;
+			box-shadow: none;
+			color: #ffffff;
+			cursor: pointer;
+			font-size: 2em;
+			height: 2em;
+			line-height: 2em;
+			opacity: 0.7;
+			padding: 0;
+			position: absolute;
+			width: 2em;
+		}
+
+			.lightbox button:hover {
+				background: rgba(255, 255, 255, 0.08);
+				opacity: 1;
+			}
+
+			.lightbox .lb-close { right: 0.5em; top: 0.5em; }
+			.lightbox .lb-prev { left: 0.5em; top: 50%; transform: translateY(-50%); }
+			.lightbox .lb-next { right: 0.5em; top: 50%; transform: translateY(-50%); }
+
+		@media screen and (max-width: 736px) {
+
+			.lightbox {
+				padding: 3.5em 1em;
+			}
+
+				.lightbox .lb-prev, .lightbox .lb-next {
+					bottom: 0.25em;
+					top: auto;
+					transform: none;
+				}
+
+		}
+
+	body.lightbox-open {
+		overflow: hidden;
+	}
+
+/* ---------------------------------------------------------------
+   Footer: Bluesky icon (not included in Font Awesome 5)
+   --------------------------------------------------------------- */
+
+	ul.contact li.bluesky:before {
+		content: '';
+		background-color: transparent;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 530'%3E%3Cpath fill='%23ffffff' d='M135.7 44.0C202.5 94.2 274.3 195.9 300.6 250.3c26.4-54.4 98.1-156.1 164.9-206.3C513.7 7.8 591.8-20.2 591.8 69.0c0 17.8-10.2 149.6-16.2 171.0-20.8 74.4-96.5 93.4-163.9 81.9 117.7 20.0 147.7 86.4 83.0 152.7-122.8 126.0-176.5-31.6-190.3-72.0-2.5-7.4-3.7-10.9-3.7-7.9 0-3.0-1.2 0.5-3.7 7.9-13.8 40.4-67.5 198.0-190.3 72.0-64.7-66.4-34.7-132.8 83.0-152.7-67.3 11.5-143.0-7.5-163.9-81.9C20.0 218.6 9.8 86.8 9.8 69.0c0-89.2 78.1-61.2 125.9-25.0z'/%3E%3C/svg%3E");
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: 1.1em;
+	}
+
+/* Research figures: <figure> resets (browsers add a 40px side margin by default) */
+	#wrapper figure {
+		margin: 0 0 2em 0;
+	}
+
+		#wrapper figure.image.left,
+		#wrapper figure.image.right {
+			margin-bottom: 1.5em;
+		}
+
+
+		#wrapper figure.image figcaption,
+		#wrapper figure.col-6 figcaption {
+			margin-bottom: 0;
+		}
+
+	#wrapper .box.alt .row > figure.col-6 {
+		margin-bottom: 0;
+	}
+
+	#wrapper figure img {
+		display: block;
+		max-width: 100%;
+	}
+
+	/* Don't let floated figures run into the next section */
+	#wrapper .inner h3.major,
+	#wrapper .inner .box.alt {
+		clear: both;
+	}

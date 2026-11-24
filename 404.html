@@ -1,0 +1,28 @@
+---
+layout: default
+title: Page not found
+permalink: /404.html
+sitemap: false
+---
+				<!-- Wrapper -->
+					<section id="wrapper">
+						<header>
+							<div class="inner">
+								<h2>Lost in space</h2>
+								<p>That page doesn't exist (or has drifted out of orbit).</p>
+							</div>
+						</header>
+
+						<div class="wrapper">
+							<div class="inner">
+								<p>Try the <a href="{{ '/' | relative_url }}">home page</a>, or one of these:</p>
+								<ul>
+									{%- for item in site.data.navigation %}
+									<li><a href="{{ item.url | relative_url }}">{{ item.full | default: item.title }}</a></li>
+									{%- endfor %}
+									<li><a href="{{ '/projects.html' | relative_url }}">Projects</a>:
+										{% for project in site.data.projects %}<a href="{{ project.url | relative_url }}">{{ project.name }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</li>
+								</ul>
+							</div>
+						</div>
+					</section>

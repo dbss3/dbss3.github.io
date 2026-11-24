@@ -1,0 +1,19 @@
+<section class="features projects">
+	{%- for project in site.data.projects %}
+	<article>
+		<a href="{{ project.url | relative_url }}" class="image"><img src="{{ project.image | relative_url }}" alt="Screenshot of {{ project.name }}" loading="lazy" /></a>
+		<h3 class="major">{{ project.name }}</h3>
+		{%- if include.full %}
+		<ul class="tags">{% for tag in project.tags %}<li>{{ tag }}</li>{% endfor %}</ul>
+		<p>{{ project.description }}</p>
+		<ul class="actions">
+			<li><a href="{{ project.url | relative_url }}" class="button primary small">Play / Launch</a></li>
+			<li><a href="{{ project.repo }}" class="button small icon brands fa-github" target="_blank" rel="noopener">Source</a></li>
+		</ul>
+		{%- else %}
+		<p>{{ project.tagline }}</p>
+		<a href="{{ project.url | relative_url }}" class="special">Launch</a>
+		{%- endif %}
+	</article>
+	{%- endfor %}
+</section>

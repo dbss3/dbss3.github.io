@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+{%- if page.title -%}
+	{%- assign page_title = page.title | append: " – " | append: site.title -%}
+{%- else -%}
+	{%- assign page_title = site.title -%}
+{%- endif -%}
+{%- assign page_description = page.description | default: site.description | strip_newlines -%}
+<html lang="en">
+	<head>
+		<title>{{ page_title }}</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="{{ page_description | escape }}" />
+		<link rel="canonical" href="{{ page.url | replace: 'index.html', '' | absolute_url }}" />
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="{{ site.title }}" />
+		<meta property="og:title" content="{{ page_title | escape }}" />
+		<meta property="og:description" content="{{ page_description | escape }}" />
+		<meta property="og:url" content="{{ page.url | replace: 'index.html', '' | absolute_url }}" />
+		<meta property="og:image" content="{{ page.image | default: '/images/realgrain_smol.png' | absolute_url }}" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<link rel="icon" type="image/png" href="{{ '/images/favicon.png' | relative_url }}" />
+		<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
+		<link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}" />
+		<noscript><link rel="stylesheet" href="{{ '/assets/css/noscript.css' | relative_url }}" /></noscript>
+	</head>
+	<body class="is-preload{% if page.body_class %} {{ page.body_class }}{% endif %}">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header"{% if page.banner %} class="alt"{% endif %}>
+						<h1><a href="{{ '/' | relative_url }}">Dominic Samra</a></h1>
+						{% include tabs.html %}
+						<nav class="menu-toggle">
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu (pop-out, used on smaller screens) -->
+					<nav id="menu">
+						<div class="inner">
+							<h2>Menu</h2>
+							<ul class="links">
+								<li><a href="{{ '/' | relative_url }}">Home</a></li>
+								{%- for item in site.data.navigation %}
+								<li><a href="{{ item.url | relative_url }}">{{ item.full | default: item.title }}</a></li>
+								{%- endfor %}
+								<li><a href="{{ '/projects.html' | relative_url }}">Projects</a></li>
+							</ul>
+							<ul class="links sub">
+								{%- for project in site.data.projects %}
+								<li><a href="{{ project.url | relative_url }}">{{ project.name }}</a></li>
+								{%- endfor %}
+							</ul>
+							<a href="#" class="close">Close</a>
+						</div>
+					</nav>
+
+{{ content }}
+
+				{% include footer.html %}
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{{ '/assets/js/jquery.min.js' | relative_url }}"></script>
+			<script src="{{ '/assets/js/jquery.scrollex.min.js' | relative_url }}"></script>
+			<script src="{{ '/assets/js/browser.min.js' | relative_url }}"></script>
+			<script src="{{ '/assets/js/breakpoints.min.js' | relative_url }}"></script>
+			<script src="{{ '/assets/js/util.js' | relative_url }}"></script>
+			<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+			<script src="{{ '/assets/js/lightbox.js' | relative_url }}"></script>
+
+	</body>
+</html>
